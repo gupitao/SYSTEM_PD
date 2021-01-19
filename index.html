@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-br" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>User Project</title>
+		<meta name="description"	content="User System">
+		<meta name="keywords"		content="template">
+		<meta name="viewport"		content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+		<link rel="stylesheet" href="./css/libs/fonts/themify-icons/themify-icons.min.css">
+		<link rel="stylesheet" href="./css/libs/font-awesome/css/font-awesome.min.css">
+		<link rel='stylesheet' href='./css/libs/google.fonts.css' type='text/css'>
+		<link rel="stylesheet" href="./css/libs/textAngular.css">
+		<link rel="stylesheet" href="./css/libs/sweetalert.css">
+		<link rel="stylesheet" href="./css/libs/slide-menu.css"type="text/css" />
+		<link rel="stylesheet" href="./css/libs/angular-sidebarjs.min.css" type="text/css" />
+		<link rel="stylesheet" href="./css/libs/bootstrap.css"type="text/css" />
+		<link rel="stylesheet" href="./css/libs/simple-line-icons.css"type="text/css" />
+		<link rel="stylesheet" href="./css/main.css">
+
+
+		<link rel="icon" href="../favicon.ico" />
+
+	</head>
+	<body data-ng-app="app"
+		  id="app"
+		  data-ng-class=" { 'layout-boxed': main.layout === 'boxed'}">
+
+		<div class="main-container">
+			<div id="content" class="content-container">
+				<br><br>
+				<section ui-view
+						 class="view-container {{main.pageTransition.class}}">
+				</section>
+			</div>
+		</div>
+
+		<!-- LIBRARY -->
+		<script src="./js/libs/jquery.min.js"></script>
+
+		<script src="./js/libs/angular/angular.min.js">									</script>
+		<script src="./js/libs/angular/angular-locale_pt-br.js">						</script>
+		<script src="./js/libs/angular/ngStorage.min.js">								</script>
+		<script src="./js/libs/angular/angular-ui-router.min.js">						</script>
+		<script src="./js/libs/angular/angular-aria.min.js">							</script>
+		<script src="./js/libs/angular/angular-animate.min.js">							</script>
+		<script src="./js/libs/angular/angular-messages.min.js">						</script>
+		<script src="./js/libs/angular/angular-scroll.min.js">							</script>
+		<script src="./js/libs/angular/angular-sidebarjs.min.js">						</script>
+		<script src="./js/libs/angular/angular-input-masks-standalone.min.js">			</script>
+		<script src='./js/libs/angular/angular-text-angular/textAngular-rangy.min.js'>	</script>
+		<script src='./js/libs/angular/angular-text-angular/textAngular-sanitize.js'>	</script>
+		<script src='./js/libs/angular/angular-text-angular/textAngular.min.js'>		</script>
+		<script src='./js/libs/angular/angular-resource.min.js'>						</script>
+
+
+		<script src="./js/libs/ui-bootstrap-tpls.min.js">	</script>
+		<script src="./js/libs/jquery.slimscroll.min.js">	</script>
+		<script src="./js/libs/loading-bar.min.js">			</script>
+		<script src="./js/libs/sweetalert2.js">			</script>
+		<script src="js/libs/logger.min.js">				</script>
+		<script src="js/libs/jwt-decode.min.js">			</script>
+		<!-- END LIBRARY -->
+
+		<!-- APP MODULES -->
+		<script src="js/app/app.module.js">					</script>
+		<script src="js/app/app.config.js">					</script>
+		<script src="js/app/config.route.js">				</script>
+		<!-- END APP MODULES -->
+
+		<!-- PROVIDERS -->
+		<script src="js/providers/StateDinamic.js">			</script>
+		<!-- END PROVIDERS -->
+
+		<!-- SERVICES -->
+		<script src="js/services/SweetAlert.js">		</script>
+		<script src="js/services/APIServices.js">		</script>
+		<script src="js/services/PersistentStorage.js">	</script>
+		<!-- END SERVICES -->
+
+		<script src="app/modules/register/user/user.constroller.js">	</script>
+
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<div class="page" ng-init="initialize()">
+	<div class="row">
+		<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+			<section class="panel panel-default">
+				<div class="panel-heading">
+					<strong>Cadastro de Usuário</strong>
+					<a ui-sref="page.initial.dashboard" class="pull-right text-danger">
+						<span class="fa fa-times"></span>
+					</a>
+				</div>
+				<div class="panel-body">
+					<form name="frmUser">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-xs-6 col-sm-2">
+									<label for="user_iCod">Código</label>
+									<input type="text" id="user_iCod" class="form-control" ng-model="userObj.iCodUsuario" disabled>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6">
+									<label for="user_cNome"><span class="text-red">*</span>Nome</label>
+									<input type="text" id="user_cNome" class="form-control" ng-model="userObj.cNome" maxlength="120" required>
+								</div>
+
+								<div class="col-md-3">
+									<label for="user_dtNascimento"><span class="text-red">*</span>Data Nascimento</label>
+									<input type="text" id="user_dtNascimento" class="form-control" ng-model="userObj.dtNascimento" ui-date-mask="DD/MM/YYYY" parse="false" ng-blur="validaData(userObj.dtNascimento)" required>
+								</div>
+
+								<div class="col-md-3">
+									<label for="user_cSexo"><span class="text-red">*</span>Sexo</label>
+									<select id="user_cSexo" class="form-control" ng-model="userObj.cSexo" required>
+										<option value="M">Masculino</option>
+										<option value="F">Feminino</option>
+									</select>
+								</div>
+
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-2">
+									<label for="user_cCep">CEP</label>
+									<input type="text" id="user_cCep" class="form-control" ng-model="userObj.cCep" ng-blur="getCep(userObj)" ui-br-cep-mask>
+								</div>
+								<div class="col-sm-6">
+									<label for="user_cEndereco">Endereço</label>
+									<input type="text" id="user_cEndereco" class="form-control" ng-model="userObj.cEndereco" maxlength="120">
+								</div>
+								<div class="col-sm-2">
+									<label for="user_cNumero">Número</label>
+									<input type="text" id="user_cNumero" class="form-control" ng-model="userObj.cNumero" max maxlength="12">
+								</div>
+								<div class="col-sm-2">
+									<label for="user_cComplemento">Complemento</label>
+									<input type="text" id="user_cComplemento" class="form-control" ng-model="userObj.cComplemento" maxlength="50">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-4">
+									<label for="user_cBairro">Bairro</label>
+									<input type="text" id="user_cBairro" class="form-control" ng-model="userObj.cBairro" maxlength="120">
+								</div>
+								<div class="col-sm-2">
+									<label for="user_cEstado">Estado</label>
+									<input type="text" id="user_cEstado" class="form-control" ng-model="userObj.cEstado" maxlength="2">
+								</div>
+								<div class="col-sm-3">
+									<label for="user_cCidade">Cidade</label>
+									<input type="text" id="user_cCidade" class="form-control" ng-model="userObj.cCidade" maxlength="120">
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-2">
+									<button type="button" class="btn btn-default btn-block btn-w-sm" ng-click="back()">
+										Voltar
+									</button>
+								</div>
+								<div class="col-md-2 col-md-offset-6 col-sm-3 col-sm-offset-6">
+									<button type="button" class="btn btn-warning btn-block btn-w-sm" ng-click="clearFields()">
+										Limpar
+									</button>
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<button type="button" class="btn btn-success btn-block btn-w-sm" ng-click="saveUser(userObj)" ng-disabled="frmUser.$invalid">
+										Salvar
+									</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>

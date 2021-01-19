@@ -1,0 +1,49 @@
+<div class="page" ng-init="initialize()">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            <section class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Listagem de Usuário</strong>
+                    <a ui-sref="page.initial.dashboard" class="pull-right text-danger">
+                        <span class="fa fa-times"></span>
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <form name="frmUser">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-5">
+                                    <label>&nbsp;</label>
+                                    <button class="btn btn-block btn-success" ng-click="newOrEdit()">
+                                        <i class="glyphicon glyphicon-plus"></i>&nbsp;
+                                        Novo
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Código		    </th>
+                        <th>Nome            </th>
+                        <th>Excluir		    </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="(index, userObj) in usuarios">
+                        <td ng-click="newOrEdit(userObj)">{{userObj.iCodUsuario}}	        </td>
+                        <td ng-click="newOrEdit(userObj)">{{userObj.cNome}}		        </td>
+                        <td>
+                            <button type="button" class="btn-sm btn-remove" ng-click="deleteUser(index, userObj)">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</div>
